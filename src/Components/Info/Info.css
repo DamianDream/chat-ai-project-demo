@@ -1,0 +1,20 @@
+a {
+    font-weight: bold;
+    list-style: none;
+    color: var(--clr-text-light);
+    text-decoration: none;
+    margin-left: .5em;
+}
+
+a:hover {
+    color: tomato;
+}
+
+.info {
+    display: flex;
+    place-content: center;
+    gap: .5em;
+    opacity: .6;
+    font-size: .7rem;
+    padding: 1em;
+}

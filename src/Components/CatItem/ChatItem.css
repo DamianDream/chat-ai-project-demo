@@ -1,0 +1,56 @@
+
+.chat-items {
+    background-color: rgba(255, 255, 255, .20);
+    border-radius: 8px;
+    transition: all .4s ease-in-out;
+    min-height: 0vh;
+    max-height: 40vh;
+    line-height: 1;
+}
+
+.chat-items--active {
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding: 1rem;
+    min-height: 34vh;
+}
+
+.chat-item__User {
+    color: var(--clr-dark);
+    line-height: 1;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, .25);
+    text-align: end;
+    box-shadow: rgba(0, 0, 0, 0.05) 0 54px 55px,
+    rgba(0, 0, 0, 0.05) 0 -12px 55px,
+    rgba(0, 0, 0, 0.05) 0 4px 6px,
+    rgba(0, 0, 0, 0.05) 0 12px 55px,
+    rgba(0, 0, 0, 0.05) 0 -3px 5px;
+}
+
+.chat-item__ChatGPT {
+    color: var(--clr-dark);
+    padding: 10px;
+    border-radius: 8px;
+    background-color: var(--clr-accent);
+    box-shadow: rgba(0, 0, 0, 0.05) 0 54px 55px,
+    rgba(0, 0, 0, 0.05) 0 -12px 55px,
+    rgba(0, 0, 0, 0.05) 0 4px 6px,
+    rgba(0, 0, 0, 0.05) 0 12px 55px,
+    rgba(0, 0, 0, 0.05) 0 -3px 5px;
+}
+
+.chat-item__title, .chat-item__time {
+    opacity: .6;
+    padding: 0 .1rem;
+    font-size: .7rem;
+    font-style: italic;
+    line-height: .8;
+}
+
+.chat-item__content {
+    font-size: 1rem;
+}
