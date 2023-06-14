@@ -1,6 +1,8 @@
 # Getting Started with React Ai-Chat demo project
 
-![app_intro.jpg](src%2FAssets%2Fapp_intro.jpg)
+<p align="center">
+    <img src="./src/Assets/app_intro.jpg" >
+</p>
 
 ### `Important` 
 Before you start testing the project you should do two steps listed below.
@@ -15,7 +17,9 @@ Create `.env` file in project folder and indicate in the file two lines of code 
 `API_KEY=key`\
 `ORG=Organization ID`
 
-![eny_file_syntax.png](src%2FAssets%2Feny_file_syntax.png)
+<p align="center">
+    <img src="./src/Assets/eny_file_syntax.png" >
+</p>
 
 ### `npm start`
 
