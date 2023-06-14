@@ -24,23 +24,23 @@
     border-radius: 8px;
     background-color: rgba(255, 255, 255, .25);
     text-align: end;
-    box-shadow: rgba(0, 0, 0, 0.05) 0 54px 55px,
-    rgba(0, 0, 0, 0.05) 0 -12px 55px,
-    rgba(0, 0, 0, 0.05) 0 4px 6px,
-    rgba(0, 0, 0, 0.05) 0 12px 55px,
-    rgba(0, 0, 0, 0.05) 0 -3px 5px;
+    box-shadow: var(--box-shadow);
 }
 
 .chat-item__ChatGPT {
+    display: inline-block;
     color: var(--clr-dark);
     padding: 10px;
     border-radius: 8px;
     background-color: var(--clr-accent);
-    box-shadow: rgba(0, 0, 0, 0.05) 0 54px 55px,
-    rgba(0, 0, 0, 0.05) 0 -12px 55px,
-    rgba(0, 0, 0, 0.05) 0 4px 6px,
-    rgba(0, 0, 0, 0.05) 0 12px 55px,
-    rgba(0, 0, 0, 0.05) 0 -3px 5px;
+    box-shadow: var(--box-shadow);
+}
+
+.chat-item__ChatGPT .chat-item__content {
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    border-color: var(--clr-dark);
 }
 
 .chat-item__title, .chat-item__time {

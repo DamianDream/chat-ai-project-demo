@@ -15,20 +15,20 @@ export default function App() {
   const messageEndRef = useRef(null)
   const inputArea = useRef(null)
 
-    const faqContent = [
-        {
-            title:"Hi",
-            content: "Hello"
-        },
-        {
-            title:"Як побачити весь Ужгород?",
-            content: "Де в місті Ужгороді можна знайти оглядовий майданчік з якого беду видно весь город"
-        },
-        {
-            title:"Де поласувати смачненьким?",
-            content: "Де вмісти Ужгород знаходятся заклади Штефаня?"
-        },
-    ]
+const faqContent = [
+    {
+        title:"Hi",
+        content: "Hello"
+    },
+    {
+        title:"Milan city",
+        content: "Tell me shortly three facts about Milan"
+    },
+    {
+        title:"tell a joke",
+        content: "I want a joke, please tell me!"
+    },
+]
 
   const fetchAPI = async (faq) => {
     const fetchOptions = {
@@ -63,6 +63,7 @@ export default function App() {
 
     const renderMessage = async () => {
         inputArea.current.value = "";
+
         if(!isActive) setIsActive(true)
 
         setTimeout(() => {
@@ -89,7 +90,7 @@ export default function App() {
         await fetchAPI(data)
     }
 
-    const resset = () => {
+    const reset = () => {
         setChatData([])
         if(isActive) setIsActive(false)
         inputArea.current.value = "";
@@ -100,7 +101,7 @@ export default function App() {
         <section className="chat-container">
 
             <div className="chat-question-variants">
-                <h2 className="chat-question-header">{"Suggest to ask me about:"}</h2>
+                <h2 className="chat-question-header">{"Ask me about:"}</h2>
                 {faqContent && faqContent.map(faqMessage => (
                     <FAQ
                         key={Math.random()}
@@ -134,7 +135,9 @@ export default function App() {
                       placeholder="Ask..."
                       onChange={(e) => setQuestion(e.target.value)}/>
                   <button id="chatSubmit" onClick={renderMessage}>Submit</button>
-                  <button id="chatRest" onClick={resset}>Reset</button>
+                  <button id="chatRest" onClick={reset}>
+                      <i className="fa-solid fa-rotate-right"></i>
+                  </button>
 
                 </div>
                 <Info />

@@ -14,7 +14,11 @@ a:hover {
     display: flex;
     place-content: center;
     gap: .5em;
-    opacity: .6;
+    opacity: .4;
     font-size: .7rem;
     padding: 1em;
+}
+
+.info > p {
+    display: inline-block;
 }
