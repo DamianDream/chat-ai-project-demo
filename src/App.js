@@ -1,14 +1,14 @@
 import React from 'react'
 import { useState, useEffect, useRef } from 'react'
-import Info from './Components/Info/Info'
-import ChatItem from "./Components/CatItem/ChatItem"
+
 import FAQ from './Components/FAQ/FAQ'
+import ChatItem from "./Components/CatItem/ChatItem"
+import Info from './Components/Info/Info'
 
 export default function App() {
 
   const [ question, setQuestion ] = useState('')
   const [ chatData, setChatData ] = useState([])
-
   const [ error, setError ] = useState()
   const [ isActive, setIsActive ] = useState(false)
 
@@ -17,7 +17,7 @@ export default function App() {
 
 const faqContent = [
     {
-        title:"Hi",
+        title:"Say hi",
         content: "Hello"
     },
     {
@@ -25,8 +25,8 @@ const faqContent = [
         content: "Tell me shortly three facts about Milan"
     },
     {
-        title:"tell a joke",
-        content: "I want a joke, please tell me!"
+        title:"Tell me a joke",
+        content: "Please tell me a joke about Junior Frontend developer"
     },
 ]
 
@@ -54,11 +54,12 @@ const faqContent = [
                           }
                         ]
                     ))
-        }, 600)
+        }, 1000)
 
     } catch (error) {
         setError(error)
     }
+      console.log("Fetch")
   }
 
     const renderMessage = async () => {
@@ -96,6 +97,13 @@ const faqContent = [
         inputArea.current.value = "";
     }
 
+    const handleKeyUp = async (event) =>{
+        event.persist();
+        if (event.key === "Enter") {
+            await renderMessage()
+        }
+    }
+
   return (
       <div className="chat">
         <section className="chat-container">
@@ -127,12 +135,12 @@ const faqContent = [
           </div>
           <div className="control-area">
                 <div className="input-container">
-
                   <input
                       ref={inputArea}
                       id="chatInput"
                       type="text"
                       placeholder="Ask..."
+                      onKeyDown={handleKeyUp}
                       onChange={(e) => setQuestion(e.target.value)}/>
                   <button id="chatSubmit" onClick={renderMessage}>Submit</button>
                   <button id="chatRest" onClick={reset}>

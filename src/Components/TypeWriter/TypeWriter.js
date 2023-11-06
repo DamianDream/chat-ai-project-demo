@@ -15,10 +15,8 @@ const TypeWriter = ({ text }) => {
         if(index.current < text.length) {
             const timeout = setTimeout(() => {
                 setCurrentText((value) => value + text.charAt(index.current -1))
-                console.log(text.charAt(index.current))
                 index.current += 1
             }, 50)
-
             return () => {
                 clearTimeout(timeout)
             }
