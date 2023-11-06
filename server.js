@@ -22,7 +22,6 @@ app.post('/',  async (req, res) => {
     console.log(message);
 
     // Below sample to use with another chat-gpt assistant
-
     // const response = await openai.createCompletion({
     //     model: "text-davinci-003",
     //     prompt: message,
