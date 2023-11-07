@@ -110,6 +110,21 @@ export default function App() {
             return
         }
 
+        if (data === "Joke about Frontend developer and ladder") {
+            setTimeout(() => {
+                setChatData(dataBefore => (
+                    [...dataBefore,
+                        {
+                            role: "System",
+                            content: "Why did the Junior Frontend developer bring a ladder to work? Because they wanted to reach the \"higher level\" of coding!"
+                        }
+                    ]
+                ))
+                setLoading(false)
+            }, 6000)
+            return
+        }
+
         await fetchAPI(data)
     }
 
