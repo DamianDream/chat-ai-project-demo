@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/batalshikov_chat_ai_demo/static/css/main.d535762e.css",
-    "main.js": "/batalshikov_chat_ai_demo/static/js/main.82b6f259.js",
-    "index.html": "/batalshikov_chat_ai_demo/index.html",
-    "static/media/loader.svg": "/batalshikov_chat_ai_demo/static/media/loader.dd4e22b73340adfab29e46b1603411b9.svg",
-    "main.d535762e.css.map": "/batalshikov_chat_ai_demo/static/css/main.d535762e.css.map",
-    "main.82b6f259.js.map": "/batalshikov_chat_ai_demo/static/js/main.82b6f259.js.map"
+    "main.css": "./static/css/main.d535762e.css",
+    "main.js": "./static/js/main.3c305afc.js",
+    "index.html": "./index.html",
+    "static/media/loader.svg": "./static/media/loader.dd4e22b73340adfab29e46b1603411b9.svg",
+    "main.d535762e.css.map": "./static/css/main.d535762e.css.map",
+    "main.3c305afc.js.map": "./static/js/main.3c305afc.js.map"
   },
   "entrypoints": [
     "static/css/main.d535762e.css",
-    "static/js/main.82b6f259.js"
+    "static/js/main.3c305afc.js"
   ]
 }
