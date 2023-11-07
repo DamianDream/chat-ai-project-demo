@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import FAQ from './Components/FAQ/FAQ'
 import ChatItem from "./Components/CatItem/ChatItem"
 import Info from './Components/Info/Info'
+import Spinner from './Components/Spinner/Spinner'
 
 import faqContent from './Components/faqContent'
 
@@ -13,11 +14,13 @@ export default function App() {
   const [ chatData, setChatData ] = useState([])
   const [ error, setError ] = useState()
   const [ isActive, setIsActive ] = useState(false)
+  const [ loading, setLoading ] = useState(false)
 
   const messageEndRef = useRef(null)
   const inputArea = useRef(null)
 
   const fetchAPI = async (faq) => {
+
     const fetchOptions = {
       method: "POST",
       headers: {
@@ -45,6 +48,10 @@ export default function App() {
 
     } catch (error) {
         setError(error)
+    } finally {
+        setTimeout(() => {
+            setLoading(false)
+        }, 1000)
     }
   }
 
@@ -52,6 +59,7 @@ export default function App() {
         inputArea.current.value = "";
 
         if(!isActive) setIsActive(true)
+        setLoading(true)
 
         setTimeout(() => {
             setChatData(dataBefore => (
@@ -73,6 +81,7 @@ export default function App() {
     }, [chatData])
 
     const faqAction = async (data) => {
+      setLoading(true)
         if(!isActive) setIsActive(true)
 
         setTimeout(() => {
@@ -96,6 +105,7 @@ export default function App() {
                         }
                     ]
                 ))
+                setLoading(false)
             }, 2000)
             return
         }
@@ -148,13 +158,16 @@ export default function App() {
           <div className="control-area">
                 <div className="input-container">
                   <input
+                      disabled={loading}
                       ref={inputArea}
                       id="chatInput"
                       type="text"
                       placeholder="Ask..."
                       onKeyDown={handleKeyUp}
                       onChange={(e) => setQuestion(e.target.value)}/>
-                  <button id="chatSubmit" onClick={renderMessage}>Submit</button>
+                  <button id="chatSubmit" onClick={renderMessage} disabled={(loading || question === "")}>
+                      {loading ? <Spinner /> : "Submit"}
+                  </button>
                   <button id="chatRest" onClick={reset}>
                       <i className="fa-solid fa-rotate-right"></i>
                   </button>
