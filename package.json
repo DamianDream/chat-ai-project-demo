@@ -2,7 +2,7 @@
   "name": "openai-project",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://damiandream.github.io/batalshikov_chat_ai_demo",
+  "homepage": ".",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
