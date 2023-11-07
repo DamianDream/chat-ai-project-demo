@@ -4,6 +4,9 @@
     <img src="./src/Assets/app_intro.jpg" >
 </p>
 
+https://github.com/DamianDream/chat-ai-project-demo/assets/94145754/218d5a20-e3e0-4f9a-97c9-e1835506c39b
+
+
 ### `Important` 
 Before you start testing the project you should do two steps listed below.
 
