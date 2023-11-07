@@ -7,7 +7,6 @@ const cors = require('cors');
 const app = express();
 const port = 3010;
 
-
 const configuration = new Configuration({
     apiKey: "YOUR_API_KEY"
 })
