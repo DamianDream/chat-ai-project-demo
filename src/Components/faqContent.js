@@ -11,6 +11,10 @@ const faqContent = [
         title:"Tell me a joke",
         content: "Please tell me a joke about Junior Frontend developer"
     },
+    {
+        title:"FrontEnd Joke",
+        content: "Joke about Frontend developer and ladder"
+    },
 ]
 
 export default faqContent

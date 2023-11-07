@@ -9,7 +9,8 @@ const port = 3010;
 
 
 const configuration = new Configuration({
-    apiKey: "YOUR_API_KEY"
+    apiKey: "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"
+    // apiKey: "YOUR_API_KEY"
 })
 
 const openai = new OpenAIApi(configuration);
@@ -17,7 +18,7 @@ const openai = new OpenAIApi(configuration);
 app.use(bodyParser.json());
 app.use(cors());
 
-let isKeyValid = false
+let isKeyValid = true
 
 app.post('/',  async (req, res) => {
     const { message } = req.body;
