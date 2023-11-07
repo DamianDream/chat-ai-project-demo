@@ -5,7 +5,7 @@ import TypeWriter from "../TypeWriter/TypeWriter";
 export default function ChatItem(props) {
 
     const time = new Date(Date.now()).getHours() + ":" + new Date(Date.now()).getMinutes()
-    const user = (props.role === "User") ? "User" : "ChatGPT"
+    const user = (props.role === "ChatGPT") ? "ChatGPT" : props.role
 
     return (
         <div className={`chat-item__${props.role}`}>

@@ -5,6 +5,8 @@ import FAQ from './Components/FAQ/FAQ'
 import ChatItem from "./Components/CatItem/ChatItem"
 import Info from './Components/Info/Info'
 
+import faqContent from './Components/faqContent'
+
 export default function App() {
 
   const [ question, setQuestion ] = useState('')
@@ -14,21 +16,6 @@ export default function App() {
 
   const messageEndRef = useRef(null)
   const inputArea = useRef(null)
-
-const faqContent = [
-    {
-        title:"Say hi",
-        content: "Hello"
-    },
-    {
-        title:"Milan city",
-        content: "Tell me shortly three facts about Milan"
-    },
-    {
-        title:"Tell me a joke",
-        content: "Please tell me a joke about Junior Frontend developer"
-    },
-]
 
   const fetchAPI = async (faq) => {
     const fetchOptions = {
@@ -42,7 +29,7 @@ const faqContent = [
     }
 
     try {
-      const response = await fetch('http://localhost:3005/', fetchOptions)
+      const response = await fetch('http://localhost:3010/', fetchOptions)
       const data = await response.json()
 
         setTimeout(() => {
@@ -59,7 +46,6 @@ const faqContent = [
     } catch (error) {
         setError(error)
     }
-      console.log("Fetch")
   }
 
     const renderMessage = async () => {
@@ -88,6 +74,32 @@ const faqContent = [
 
     const faqAction = async (data) => {
         if(!isActive) setIsActive(true)
+
+        setTimeout(() => {
+            setChatData(dataBefore => (
+                [...dataBefore,
+                    {
+                        role: "User",
+                        content: data
+                    }
+                ]
+            ))
+        }, 800)
+
+        if (data === "Hello") {
+            setTimeout(() => {
+                setChatData(dataBefore => (
+                    [...dataBefore,
+                        {
+                            role: "System",
+                            content: "Hello to you!"
+                        }
+                    ]
+                ))
+            }, 2000)
+            return
+        }
+
         await fetchAPI(data)
     }
 

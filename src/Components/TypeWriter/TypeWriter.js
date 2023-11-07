@@ -21,10 +21,11 @@ const TypeWriter = ({ text }) => {
                 clearTimeout(timeout)
             }
         }
+        // eslint-disable-next-line
     }, [currentText])
 
     return (
-        <p>{currentText}</p>
+        <span>{currentText}</span>
     )
 }
 
